@@ -1,0 +1,581 @@
+/* FULL PORTFOLIO TESTED & OPTIMIZED – Ready for clients – 100% Gemini AntiGravity */
+/* Global styles with performance optimizations, GPU acceleration, and responsive design – QA Tested December 2025 */
+
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: var(--font-orbitron);
+  --color-neon-purple: #A855F7;
+  --color-neon-cyan: #22D3EE;
+  --color-glass-bg: rgba(0, 0, 0, 0.4);
+  --color-glass-border: rgba(168, 85, 247, 0.3);
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-orbitron), sans-serif;
+  overflow-x: hidden;
+}
+
+.font-orbitron {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance Optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* GPU Acceleration for animations */
+.glass-panel,
+.project-card-subtle,
+[class*="animate-"],
+.glitch-text {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Canvas Performance Optimization */
+.canvas-optimized {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Custom Utilities */
+.text-glow {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5), 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.box-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.glass-panel {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-glass-border);
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  animation: glitch-skew 1s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 #A855F7;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 #22D3EE;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(31px, 9999px, 94px, 0);
+  }
+
+  10% {
+    clip: rect(112px, 9999px, 76px, 0);
+  }
+
+  20% {
+    clip: rect(85px, 9999px, 140px, 0);
+  }
+
+  30% {
+    clip: rect(120px, 9999px, 34px, 0);
+  }
+
+  40% {
+    clip: rect(26px, 9999px, 150px, 0);
+  }
+
+  50% {
+    clip: rect(60px, 9999px, 105px, 0);
+  }
+
+  60% {
+    clip: rect(95px, 9999px, 45px, 0);
+  }
+
+  70% {
+    clip: rect(15px, 9999px, 125px, 0);
+  }
+
+  80% {
+    clip: rect(75px, 9999px, 90px, 0);
+  }
+
+  90% {
+    clip: rect(135px, 9999px, 20px, 0);
+  }
+
+  100% {
+    clip: rect(50px, 9999px, 115px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 119px, 0);
+  }
+
+  10% {
+    clip: rect(105px, 9999px, 48px, 0);
+  }
+
+  20% {
+    clip: rect(25px, 9999px, 130px, 0);
+  }
+
+  30% {
+    clip: rect(95px, 9999px, 55px, 0);
+  }
+
+  40% {
+    clip: rect(145px, 9999px, 15px, 0);
+  }
+
+  50% {
+    clip: rect(35px, 9999px, 100px, 0);
+  }
+
+  60% {
+    clip: rect(80px, 9999px, 70px, 0);
+  }
+
+  70% {
+    clip: rect(120px, 9999px, 40px, 0);
+  }
+
+  80% {
+    clip: rect(10px, 9999px, 135px, 0);
+  }
+
+  90% {
+    clip: rect(55px, 9999px, 85px, 0);
+  }
+
+  100% {
+    clip: rect(90px, 9999px, 60px, 0);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+
+  10% {
+    transform: skew(-2deg);
+  }
+
+  20% {
+    transform: skew(1deg);
+  }
+
+  30% {
+    transform: skew(-1deg);
+  }
+
+  40% {
+    transform: skew(2deg);
+  }
+
+  50% {
+    transform: skew(0deg);
+  }
+
+  60% {
+    transform: skew(1deg);
+  }
+
+  70% {
+    transform: skew(-2deg);
+  }
+
+  80% {
+    transform: skew(2deg);
+  }
+
+  90% {
+    transform: skew(-1deg);
+  }
+
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* Hide Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Project Card Subtle Hover */
+.project-card-subtle {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-subtle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(168, 85, 247, 0.15);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Snap Scroll */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .project-card-subtle:hover {
+    transform: translateY(-2px);
+  }
+
+  .glitch-text {
+    font-size: 2.5rem;
+  }
+
+  /* Better touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .glass-panel {
+    padding: 2rem;
+  }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 1024px) {
+  .glass-panel {
+    padding: 3rem;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .glitch-text,
+  .glitch-text::before,
+  .glitch-text::after {
+    animation: none;
+  }
+
+  .project-card-subtle:hover {
+    transform: translateY(-2px);
+  }
+
+  .animate-fadeIn {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Terminal Scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-cyan-500\/50::-webkit-scrollbar-thumb {
+  background-color: rgba(34, 211, 238, 0.5);
+  border-radius: 4px;
+}
+
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Glitch Animation Keyframes from HeroContent - Moved here for Hydration Safety */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #A855F7, -0.05em -0.025em 0 #22D3EE;
+  }
+
+  14% {
+    text-shadow: 0.05em 0 0 #A855F7, -0.05em -0.025em 0 #22D3EE;
+  }
+
+  15% {
+    text-shadow: -0.05em -0.025em 0 #A855F7, 0.05em 0.025em 0 #22D3EE;
+  }
+
+  49% {
+    text-shadow: -0.05em -0.025em 0 #A855F7, 0.05em 0.025em 0 #22D3EE;
+  }
+
+  50% {
+    text-shadow: 0.025em 0.05em 0 #A855F7, 0.05em 0 0 #22D3EE;
+  }
+
+  99% {
+    text-shadow: 0.025em 0.05em 0 #A855F7, 0.05em 0 0 #22D3EE;
+  }
+
+  100% {
+    text-shadow: -0.025em 0 0 #A855F7, -0.025em -0.025em 0 #22D3EE;
+  }
+}
+
+/* PhotoFrame Animations - Moved here for clean hydration */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.photo-floating {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes pulse-gentle {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.01);
+  }
+}
+
+.neon-pulse-gentle {
+  animation: pulse-gentle 6s ease-in-out infinite;
+}
+
+.neon-pulse-gentle-outer {
+  animation: pulse-gentle 6s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.group:hover .photo-tilt-gentle {
+  transform: perspective(1000px) rotateY(4deg) rotateX(-3deg);
+  transition: transform 0.6s ease-out;
+}
+
+/* Premium Homepage Animations */
+
+/* Rotating Orbit Ring Animation */
+@keyframes rotate-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-orbit {
+  animation: rotate-orbit 20s linear infinite;
+}
+
+.rotate-orbit-reverse {
+  animation: rotate-orbit 15s linear infinite reverse;
+}
+
+/* Shimmer Effect for CTA Button */
+@keyframes shimmer-button {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer-button 3s infinite;
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-text-flow {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #A855F7, #22D3EE, #A855F7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text-flow 4s ease infinite;
+}
+
+/* Floating Decorative Elements */
+@keyframes floating-element {
+
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  33% {
+    transform: translateY(-15px) translateX(10px);
+  }
+
+  66% {
+    transform: translateY(-5px) translateX(-10px);
+  }
+}
+
+.floating-decorator {
+  animation: floating-element 8s ease-in-out infinite;
+}
+
+/* Pulsing Glow for Badge */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2), 0 0 40px rgba(34, 211, 238, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.4), 0 0 60px rgba(34, 211, 238, 0.2);
+  }
+}
+
+.pulse-glow-cyan {
+  animation: pulse-glow 3s ease-in-out infinite;
+}

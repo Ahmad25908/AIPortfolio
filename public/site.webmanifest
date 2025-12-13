@@ -1,0 +1,22 @@
+{
+    "name": "Ahmad Hassan Portfolio",
+    "short_name": "Ahmad Hassan",
+    "description": "AI-Native Engineer Building $10k-$100k MRR SaaS",
+    "icons": [
+        {
+            "src": "/favicon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#A855F7",
+    "background_color": "#000000",
+    "display": "standalone",
+    "start_url": "/",
+    "orientation": "portrait"
+}
