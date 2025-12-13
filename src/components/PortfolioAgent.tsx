@@ -55,7 +55,18 @@ export default function PortfolioAgent() {
 
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
-                throw new Error(errorData.suggestion || `API Error: ${response.status}`);
+
+                // Specific handling for Rate Limits
+                if (response.status === 429) {
+                    throw new Error("I'm receiving too many messages right now! 🧠 Please wait 1 minute and try again.");
+                }
+
+                // Specific handling for Overloaded Model
+                if (response.status === 503) {
+                    throw new Error("The AI model is currently overloaded. Please try again in a moment.");
+                }
+
+                throw new Error(errorData.suggestion || errorData.error || `API Error: ${response.status}`);
             }
 
             const reader = response.body?.getReader();
